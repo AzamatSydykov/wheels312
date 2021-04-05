@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Posts {% endblock %}
+{% block content %}
+
+<div class="section animated-row" data-section="slide03">
+
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <h2>_____________</h2>
+                                <span>_______________</span>
+                            </div>
+
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    {% for post in posts %}
+                                    <div class="item animate" data-animate="fadeInUp">
+
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                                            <h3>{{ post.title }}</h3>
+                                            <p>{{ post.body }}</p>
+<!--                                            <form class="d-flex" method="get" action="{{ post.get_absolute_url }}">-->
+                                                 <button class="btn btn-outline-success" type="submit"><a href="{{ post.get_absolute_url }}"></a>Read</button>
+<!--                                             </form>-->
+                                        </div>
+                                    </div>{% endfor %}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+{% endblock %}
